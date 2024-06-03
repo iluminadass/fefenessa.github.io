@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>vish</title>
   </head>
   <body>
     <form action="" name="vaga_emprego" id="formulario">
@@ -21,6 +21,11 @@
             />
           </label>
         </div>
+        <div>
+          Data de aniversario
+          <input type="date" />
+        </div>
+
         <br />
         <div>
           <label for="ra_dio">Vagas disponíveis:</label> <br />
@@ -94,7 +99,6 @@
       measurementId: "G-GPXXGJ60FV",
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     const database = getDatabase();
@@ -118,8 +122,6 @@
     Habilidades: ${vetor}
 
 `);
-
-      // Enviar os dados para o Firebase
       const usersRef = ref(database, "users");
       push(usersRef, {
         nome: form.nome.value,
@@ -129,7 +131,6 @@
         .then(() => {
           alert("Dados enviados com sucesso!");
           console.log("Dados enviados com sucesso!");
-          // Faça qualquer ação adicional aqui, como redirecionar o usuário ou exibir uma mensagem de sucesso.
         })
         .catch((error) => {
           console.error("Erro ao enviar dados:", error);
